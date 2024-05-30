@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template :: head"></head>
+
+<body>
+	<header th:replace="plantilla/template :: header" class="fixed-top"></header>
+	<div class="container">
+
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="form-container">
+					<h2 class="text-center mb-4">Hotel Registration</h2>
+
+					<form th:action="@{/view/hotel/save}" th:object="${hotel}" method="post">
+						<div class="form-group">
+							<input type="hidden" th:field="*{idHotel}" <label for="hotelName">Name Hotel</label>
+							<input type="text" th:field="*{hotelName}" id="NameHotel" name="NameHotel"
+								class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="mainAddressHotel">Address Hotel</label>
+							<input type="text" th:field="*{mainAddressHotel}" id="addressHotel" name="addressHotel"
+								class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone</label>
+							<input type="number" th:field="*{nitHotel}" id="phone" name="phone" class="form-control"
+								required>
+						</div>
+						<div class="form-group">
+							<label for="mainHotelPhone">Email Hotel</label>
+							<input type="email" th:field="*{mainHotelPhone}" id="emailHotel" name="emailHotel"
+								class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="mainHotelEmail">NIT</label>
+							<input type="number" th:field="*{mainHotelEmail}" id="nitHotel" name="nitHotel"
+								class="form-control" required>
+						</div>
+
+						<div class="form-group">
+							<label for="country">País:</label>
+							<select th:field="*{country}" class="form-control" id="country" name="country">
+								<option th:each="country : ${countries}" th:value="${country.idCountry}"
+									th:text="${country.countryName}"></option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="department">Departamento:</label>
+							<select class="form-control" id="department" name="department">
+								<option th:each="department : ${dpto}" th:value="${department.idDepartment}"
+									th:text="${department.departmentName}"></option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="city">Ciudad:</label>
+							<select th:field="*{city}" class="form-control" id="city" name="city">
+								<option th:each="city : ${city}" th:value="${city.idCity}" th:text="${city.cityName}">
+								</option>
+							</select>
+						</div>
+
+						<div th:if="${successMessage}" class="alert alert-success" role="alert">
+							<p th:text="${successMessage}"></p>
+						</div>
+						<div class="form-group text-center">
+							<button th:if="${editMode}" type="submit" class="btn btn-primary">Editar Hotel</button>
+							<button th:unless="${editMode}" type="submit" class="btn btn-primary">Registrar
+								Hotel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

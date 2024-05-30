@@ -1,0 +1,31 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://u78tkljexo9veklf:k7LBnOnz45fo5Korn5lC@byj8y6kalc09y4nravrw-mysql.services.clever-cloud.com:3306/byj8y6kalc09y4nravrw?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: u78tkljexo9veklf
+    password: k7LBnOnz45fo5Korn5lC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+cloud:
+  name: dgqnrnokv
+  secret: abxQ5SPzb9anO1YpXfnAlx88EUo
+  key: 464168677347679
+
+securuty.basic.enble:
+security.ignored:
+# server:
+#   port: 8081
+# spring:
+#   datasource:
+#    #url: jdbc:mysql://localhost:3307/EjemploSeguridad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=True
+#     url: jdbc:mysql://localhost:3307/HotelBd?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+#     username: root
+#     password: root
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: false
